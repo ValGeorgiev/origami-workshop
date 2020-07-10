@@ -3,7 +3,7 @@
   text-decoration: none;
 }
 
-.list-item {
+.header-list-item {
   display: inline-block;
   height: auto;
   margin-right: 2%;
@@ -13,13 +13,13 @@
   vertical-align: top;
 }
 
-.list-item:not(:first-child) {
+.header-list-item:not(:first-child) {
   padding: 10px;
   margin-top: 7px;
   border-top: 2px solid #ffa000;
 }
 
-.list-item:hover {
+.header-list-item:hover {
   border-top: none;
   border-bottom: 2px solid #ffa000;
   font-weight: bold;
@@ -51,7 +51,8 @@ footer .listItem:hover {
   font-weight: bold;
 }
 
-aside .listItem {
+
+.aside-list-item {
   display: block;
   width: 98%;
   border-left: 2px solid #234465;
@@ -61,16 +62,16 @@ aside .listItem {
   text-align: center;
 }
 
-aside .listItem a {
+.aside-link {
   color: #234465;
   text-align: center;
   text-decoration: none;
-  padding-top: 5%;
+  padding-top: 5px;
   height: 60%;
   display: block;
 }
 
-aside .listItem:hover {
+.aside-list-item:hover {
   border-left: none;
   border-right: none;
   font-weight: bold;
