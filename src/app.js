@@ -16,4 +16,4 @@ const Application = () => {
   )
 }
 
-export default App
+export default Application
