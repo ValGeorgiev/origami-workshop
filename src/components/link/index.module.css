@@ -3,7 +3,7 @@
   text-decoration: none;
 }
 
-.header-list-item {
+.header-list-item, .footer-list-item {
   display: inline-block;
   height: auto;
   margin-right: 2%;
@@ -28,24 +28,24 @@
 
 
 /* footer */
-footer .listItem a {
+.footer-link {
   color: #234465;
   text-decoration: none;
 }
 
 
-footer .listItem:nth-child(1) {
+.footer-list-item:nth-child(1) {
   margin-left: 1%;
 }
 
 
-footer .listItem:not(:last-child) {
+.footer-list-item:not(:last-child) {
   padding: 2%;
   margin-top: 1.5%;
   border-bottom: 2px solid #234465;
 }
 
-footer .listItem:hover {
+.footer-list-item:hover {
   border-bottom: none;
   border-top: 2px solid #234465;
   font-weight: bold;
