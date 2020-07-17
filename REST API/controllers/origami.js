@@ -2,7 +2,8 @@ const models = require('../models');
 
 module.exports = {
     get: (req, res, next) => {
-        models.Origami.find().populate('author')
+      const length = req.query.length ? parseInt(req.query.length) : 20
+        models.Origami.find().limit(length).populate('author')
             .then((origamies) => res.send(origamies))
             .catch(next);
     },
