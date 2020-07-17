@@ -1,0 +1,9 @@
+.container {
+  text-align: center;
+}
+
+.textarea {
+  width: 300px;
+  height: 100px;
+  resize: none;
+}
