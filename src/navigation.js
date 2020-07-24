@@ -13,7 +13,7 @@ import ProfilePage from './pages/profile'
 import ErrorPage from './pages/error'
 
 const Navigation = () => {
-
+  
   return (
     <BrowserRouter>
       <Switch>
