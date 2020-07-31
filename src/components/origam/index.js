@@ -5,7 +5,7 @@ import image from '../../images/blue-origami-bird.png'
 const Origam = ({ description, author, index }) => {
   return (
     <div className={styles.container}>
-      <img className={styles.image} src={image} />
+      <img alt="origam" className={styles.image} src={image} />
       <p className={styles.description}>
         <span>{index} -</span>
         {description}

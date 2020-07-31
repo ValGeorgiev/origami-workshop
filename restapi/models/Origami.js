@@ -15,6 +15,6 @@ const origamiSchema = new Schema({
         ref: "User"
     }
 
-});
+}, { timestamps: { createdAt: 'created_at' } });
 
 module.exports = new Model('Origami', origamiSchema);
