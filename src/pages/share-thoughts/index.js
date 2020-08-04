@@ -37,6 +37,7 @@ const ShareThoughtsPage = () => {
           <SubmitButton title="Post" onClick={handleSubmit} />
         </div>
       </Container>
+      
       <Origamis length={3} updatedOrigami={updatedOrigami} />
 
     </PageLayout>
