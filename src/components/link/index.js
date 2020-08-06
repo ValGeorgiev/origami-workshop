@@ -6,7 +6,7 @@ import {
 
 const LinkComponent = ({ title, href, type }) => {
   return (
-    <div className={styles[`${type}-list-item`]}>
+    <div data-test-id={`link-${title}`} className={styles[`${type}-list-item`]}>
       <Link to={href} className={styles[`${type}-link`]}>
         {title}
       </Link>
