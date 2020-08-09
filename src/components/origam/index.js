@@ -8,14 +8,13 @@ const Origam = ({ description, author, index }) => {
       <img alt="origam" className={styles.image} src={image} />
       <div className={styles.description}>
         <span>{index} -</span>
-        <div dangerouslySetInnerHTML={{__html: description}} />
+        <div>{description}</div>
       </div>
       <p>
         <span className={styles.user}>
           <small>Author: </small>
           {author.username}
         </span>
-        
       </p>
     </div>
   )

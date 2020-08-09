@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import {
-  BrowserRouter,
   Switch,
   Route,
   Redirect
@@ -16,27 +15,25 @@ import UserContext from './Context'
 
 const Navigation = () => {
   const context = useContext(UserContext)
-  const loggedIn = context.user.loggedIn
+  const loggedIn = context.user && context.user.loggedIn
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Publications} />
-        <Route path="/share"> 
-          {loggedIn ? (<ShareThoughtsPage />): (<Redirect to="/login" />)}
-        </Route>
-        <Route path="/register">
-          {loggedIn ? (<Redirect to="/" />) : (<RegisterPage />)}
-        </Route>
-        <Route path="/login">
-          {loggedIn ? (<Redirect to="/" />) : (<LoginPage />)}
-        </Route>
-        <Route path="/profile/:userid">
-          {loggedIn ? (<ProfilePage />): (<Redirect to="/login" />)}
-        </Route>
-        <Route component={ErrorPage} />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={Publications} />
+      <Route path="/share"> 
+        {loggedIn ? (<ShareThoughtsPage />): (<Redirect to="/login" />)}
+      </Route>
+      <Route path="/register">
+        {loggedIn ? (<Redirect to="/" />) : (<RegisterPage />)}
+      </Route>
+      <Route path="/login">
+        {loggedIn ? (<Redirect to="/" />) : (<LoginPage />)}
+      </Route>
+      <Route path="/profile/:userid">
+        {loggedIn ? (<ProfilePage />): (<Redirect to="/login" />)}
+      </Route>
+      <Route component={ErrorPage} />
+    </Switch>
   )
 }
 

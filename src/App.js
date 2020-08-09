@@ -3,12 +3,16 @@ import UserContext from './Context'
 import getCookie from './utils/cookie'
 
 const App = (props) => {
-  const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
 
-  const logIn = (user) => {
+  const [user, setUser] = useState(props.user ? {
+    ...props.user,
+    loggedIn: true
+  } : null)
+  const origamis = props.origamis || []
+  
+  const logIn = (userObject) => {
     setUser({
-      ...user,
+      ...userObject,
       loggedIn: true
     })
   }
@@ -19,47 +23,15 @@ const App = (props) => {
       loggedIn: false
     })
   }
-
-  useEffect(() => {
-    const token = getCookie('x-auth-token')
-    if(!token) {
-      logOut()
-      setLoading(false)
-      return
-    }
-
-    fetch('http://localhost:9999/api/user/verify', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': token
-      }
-    }).then(promise => {
-      return promise.json()
-    }).then(response => {
-      if(response.status) {
-        logIn({
-          username: response.user.username,
-          id: response.user._id
-        })
-      } else {
-        logOut()
-      }
-      setLoading(false)
-    })
-  }, [])
-
-  if (loading) {
-    return (
-      <div>Loading....</div>
-    )
-  }
+  
+  console.log('user', user)
 
   return (
     <UserContext.Provider value={{
       user,
       logIn,
-      logOut
+      logOut,
+      origamis
     }}>
       {props.children}
     </UserContext.Provider>
